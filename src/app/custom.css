@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button {
+    font-family: "Inter", sans-serif !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.container{
+    margin: 0 auto;
+}
+
+/* Main nav focus */
+.main-nav a {
+    position: relative;
+}
+
+.main-nav a::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.125rem;
+    background-color: #09004C;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.main-nav a.active-menu::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-nav.transparent-nav a::after {
+    background-color: #E2A143;
+}
+
+.main-nav a:focus::after,
+.main-nav a:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hotel-details-wrapper .grid.py-3.px-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Canvas Menu*/
+.canvas-menu-wrapper .main-nav a {
+    padding-left: 0;
+}
+
+.canvas-menu-wrapper .main-nav>a {
+    margin-left: 0 !important;
+}
+
+/* Hotel details page gallery */
+.pswp-gallery .gallery-item-single {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.pswp-gallery a img {
+    width: 100%;
+    height: 208px;
+}
+
+.overlay {
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+}
+
+img.pswp__img {
+    height: 100vh !important;
+    object-fit: contain;
+}
+
+button#date {
+    display: inline-block;
+}
+
+.hotel-details-page-filter-area .dates-divider {
+    margin-left: 5.25rem;
+}
+
+/* Date picker in drawer */
+.calender-wrapper tr.flex {
+    justify-content: center;
+}
+
+.slick-item-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.recommended-slick-area .slick-item-title {
+    height: 55px;
+}
+
+.top-destination-slick-area .slick-item-title {
+    height: 55px;
+}
+
+.next-trip-slick-area .slick-item-title {
+    height: 55px;
+}
+
+.rental-fleets-slick-area .slick-item-title {
+    height: 55px;
+}
+
+.umrah-slick-area .slick-item-title {
+    height: 55px;
+}
+
+img.travel-illustration-img{
+    height: 294px;
+}
+
+.blog .blog-item:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.mobile-card img{
+    position: static !important;
+    width: 100px !important;
+    height: auto !important;
+}
+
+.mobile-card .content-bottom-left.justify-end{
+    justify-content: flex-start !important;
+}
+
+.mobile-card .item-price span{
+    display: flex;
+    gap: 4px;
+}
+
+.mobile-card .item-price span span{
+    font-size: 11px;
+}
+
+.car-card .single-item-media img{
+    object-fit: contain;
+}

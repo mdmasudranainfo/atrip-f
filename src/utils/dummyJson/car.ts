@@ -1,0 +1,36 @@
+export const carBookingPayload = {
+  service_id: 10,
+  service_type: "car",
+  start_date: "2025-02-24",
+  end_date: "2025-02-27",
+  extra_price: [
+    {
+      name: "Child Toddler Seat",
+      price: 100,
+      type: "one_time",
+      number: 0,
+      enable: 1,
+      price_html: "$100",
+      price_type: "",
+    },
+    {
+      name: "Infant Child Seat",
+      price: 100,
+      type: "one_time",
+      number: 0,
+      enable: 0,
+      price_html: "$100",
+      price_type: "",
+    },
+    {
+      name: "GPS Satellite",
+      price: 200,
+      type: "one_time",
+      number: 0,
+      enable: 0,
+      price_html: "$200",
+      price_type: "",
+    },
+  ],
+  number: 1,
+};

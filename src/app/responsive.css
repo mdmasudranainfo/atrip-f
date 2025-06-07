@@ -1,0 +1,983 @@
+@media screen and (max-width: 1600px) {}
+
+@media screen and (max-width: 1535px) {
+    .main-nav>a {
+        margin-left: 12px !important;
+    }
+
+    .main-nav>a:first-child {
+        margin-left: 0px !important;
+    }
+
+    .services {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .service-single {
+        flex-basis: 35%;
+    }
+
+    .hotel-details-wrapper .items-center.py-2.pb-1.px-4 button {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1280px) {
+    .site-logo {
+        width: 100px !important;
+    }
+
+    .main-nav>a {
+        margin-left: 8px !important;
+        font-size: 14px;
+    }
+
+    .more-menu-btn-wrapper {
+        margin-left: 12px !important;
+    }
+
+    .more-menu-btn {
+        font-size: 14px;
+    }
+
+    .header-buttons button {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .service-single {
+        flex-basis: 100%;
+    }
+
+    .hotel-details-wrapper .items-center.py-2.pb-1.px-4 button {
+        padding-top: 8px;
+        padding-bottom: 0px;
+        padding-left: 8px;
+        padding-right: 8px;
+        gap: 8px;
+    }
+
+    .hotel-details-wrapper button span.text-dark {
+        font-size: 14px;
+    }
+
+    .hotel-details-wrapper button span svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hotel-details-wrapper .grid-cols-\[350px\2c 1fr\] {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .hotel-details-wrapper .grid-cols-\[520px\2c 200px\2c 1fr\] {
+        grid-template-columns: 320px 200px 1fr;
+    }
+
+    .pswp-gallery a img,
+    .pswp-gallery.h-52 {
+        height: 150px;
+    }
+
+    .hero-area {
+        max-width: 1024px;
+    }
+
+    .hotel-details-location-wrapper {
+        margin-top: 16px;
+    }
+
+    .hotel-details-location-wrapper span,
+    .hotel-details-location-wrapper p,
+    .hotel-details-location-wrapper div,
+    .hotel-details-location-wrapper button {
+        font-size: 14px;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 12px;
+    }
+
+    .top-destination-slick-area .slick-track {
+        height: 275px;
+    }
+
+    .flight-date-picker {
+        flex-basis: 40%;
+    }
+
+    .guest-area {
+        flex-basis: 26%;
+    }
+}
+
+@media screen and (max-width: 1279px) and (min-width: 1024px) {
+    .dates-divider {
+        margin-left: 12px;
+    }
+
+    .title-area.mb-2 {
+        margin-bottom: 16px;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 10px;
+    }
+
+    .private-chauffeur-slick-area .services {
+        height: 238px !important;
+    }
+
+    .private-chauffeur-slick-area .services>div {
+        padding: 10px 4px;
+    }
+
+    .hotel-details-page-filter-area .dates-divider {
+        margin-left: 12px;
+    }
+
+    .main-nav-container {
+        gap: 12px;
+    }
+
+    .main-nav-container nav {
+        gap: 4px;
+    }
+
+    .main-nav-container nav a,
+    .main-nav-container nav .nav-font {
+        font-size: 14px;
+    }
+
+    .header-buttons a:last-child button {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .page-flight {
+        padding-bottom: 320px;
+    }
+
+    .private-chauffeur-slick-area .services>div {
+        padding: 10px 4px;
+    }
+
+    .private-chauffeur-slick-area .services p {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    .filter-area.pt-8 {
+        padding-top: 0;
+        padding-bottom: 9rem;
+    }
+
+    .hotel-filter-form {
+        flex-wrap: wrap;
+    }
+
+    .hotel-filter-form>div {
+        flex-basis: 50%;
+    }
+
+    .dates-divider {
+        margin-left: 14.25rem;
+    }
+
+    .hotel-details-page-filter-area .dates-divider {
+        margin-left: 220px;
+    }
+
+    .time-picker {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .service-single {
+        flex-basis: 48%;
+    }
+
+    .hotel-details-wrapper .grid-cols-\[350px\2c 1fr\] {
+        grid-template-columns: 190px 1fr;
+    }
+
+    .hotel-details-wrapper .grid.py-3.px-4 h2 {
+        font-size: 14px;
+    }
+
+    .hotel-details-wrapper .space-y-2.p-5 {
+        padding: 12px;
+    }
+
+    .pswp-gallery a img,
+    .pswp-gallery.h-52 {
+        height: 135px;
+    }
+
+    .choice-col h4 {
+        font-size: 14px;
+    }
+
+    .choice-col p {
+        font-size: 12px;
+        margin-top: 0 !important;
+    }
+
+    .hotel-details-wrapper .grid-cols-\[520px\2c 200px\2c 1fr\] {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .hotel-details-wrapper button span.text-dark {
+        font-size: 12px;
+    }
+
+    .hero-area {
+        max-width: 768px;
+    }
+
+    .hero-area-content {
+        padding-left: 12px;
+        padding-left: 12px;
+    }
+
+    .page-main-tablist {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .page-main-tablist>div {
+        display: flex;
+        overflow: auto;
+    }
+
+    .review-area {
+        margin-top: 16px;
+    }
+
+    .search-location {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .filter-area.page-tour {
+        padding-bottom: 14.5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hotel-details-wrapper button span svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hotel-details-wrapper .items-center.py-2.pb-1.px-4 button {
+        gap: 4px;
+    }
+
+    .hotel-details-wrapper .grid.py-3.px-4 h2 {
+        text-align: center;
+    }
+
+    .flight-modal {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero-area {
+        max-width: 640px;
+    }
+
+    .hotel-details-location-wrapper button {
+        padding-left: 0;
+    }
+
+    .title-review-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-area {
+        margin-top: 0;
+    }
+
+    .review-area .text-center {
+        text-align: left;
+    }
+
+    span.item-price {
+        font-size: 18px;
+    }
+
+    .beds-count {
+        display: none;
+    }
+
+    .content-bottom {
+        margin-top: 16px;
+        justify-content: flex-end;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 10px;
+    }
+
+    h3.main-title {
+        font-size: 20px;
+    }
+
+    .title-area {
+        gap: 6px;
+    }
+
+    .title-area {
+        margin-bottom: 16px;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 8px;
+    }
+
+    .item-content {
+        gap: 16px;
+    }
+
+    .item-media {
+        height: auto;
+    }
+
+    .page-flight {
+        padding-bottom: 280px;
+    }
+
+    .recommended-slick-area .slick-item-title {
+        height: 35px;
+    }
+
+    .top-destination-slick-area .slick-item-title {
+        line-height: 18px;
+        height: 36px;
+    }
+
+    .top-destination-slick-area .bottom-area {
+        padding-bottom: 28px;
+    }
+
+    .next-trip-slick-area .bottom-area {
+        height: 100px;
+    }
+
+    .next-trip-slick-area .slick-item-title {
+        height: 40px;
+        line-height: 18px;
+    }
+
+    .rental-fleets-slick-area .slick-item-title {
+        height: 40px;
+        line-height: 20px;
+    }
+
+    .rental-fleets-slick-area .bottom-area {
+        padding-bottom: 31px;
+    }
+
+    .umrah-slick-area .slick-item-title {
+        height: 36px;
+        line-height: 18px;
+    }
+
+    .umrah-slick-area .bottom-area {
+        height: 110px;
+    }
+
+    .hotel-details-page-filter-area .dates-divider {
+        margin-left: -12px;
+    }
+
+    .blog-item .blog-content {
+        flex-basis: 100%;
+    }
+
+    .blog-item .blog-thumbnail {
+        flex-basis: 40%;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 481px) {
+    button#date {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -28%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .hero-area-content {
+        padding: 0 12px;
+    }
+
+    p.short-desc {
+        display: none;
+    }
+
+    .content-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .content-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-wrapper {
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .single-item {
+        gap: 8px;
+    }
+
+    .content-location {
+        gap: 4px;
+    }
+
+    .service-single span {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .single-item-content .content-location,
+    .single-item-content .mt-1.flex.items-center.gap-2 {
+        line-height: 1;
+    }
+
+    .single-item-content .mt-1.flex.items-center.gap-2 {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .single-item-content .content-location span,
+    .single-item-content .mt-1.flex.items-center.gap-2 span {
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    .single-item-media {
+        width: 100px;
+    }
+
+    .single-item {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 18px;
+    }
+
+    .service-single {
+        flex-basis: 48%;
+    }
+
+    .item-content {
+        gap: 16px;
+    }
+
+    .price-cta-area.text-right {
+        margin-top: 16px;
+        text-align: left;
+    }
+
+    .price-cta-area .justify-end {
+        justify-content: flex-start;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 8px;
+        margin: 16px 0;
+    }
+
+    .item-media {
+        flex-basis: 35%;
+    }
+
+    .title-area h3 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .rating-area {
+        margin: 8px 0 8px;
+    }
+
+    .visa-item .content-bottom {
+        align-items: flex-end;
+        margin-top: 0;
+    }
+
+    .short-desc {
+        display: none;
+    }
+
+    .visa-item .content-top .flex.items-center.gap-1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .visa-item .content-wrapper {
+        flex-direction: column;
+    }
+
+    .visa-item .flex.text-yellow-400 {
+        margin-top: 4px;
+        margin-bottom: 2px;
+    }
+
+    h2.blog-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .blog-item .blog-thumbnail {
+        height: 200px;
+    }
+
+    .flight-modal .text-card-foreground div {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 575px) and (min-width: 491px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -25%;
+    }
+}
+
+@media screen and (max-width: 490px) and (min-width: 440px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -20%;
+    }
+}
+
+@media screen and (max-width: 440px) and (min-width: 400px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-single {
+        flex-basis: 100%;
+    }
+
+    .item-price {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .item-price-wrapper {
+        justify-content: flex-end;
+    }
+
+    button#date {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .item-media {
+        display: block;
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .item-media img {
+        position: static !important;
+    }
+
+    .price-cta-area span {
+        font-size: 18px;
+    }
+
+    .item-content {
+        gap: 10px;
+    }
+
+    .item-media {
+        flex-basis: 50%;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .content-top p,
+    .content-location span {
+        font-size: 12px;
+    }
+
+    .content-location {
+        margin-top: 3px;
+    }
+
+    .services {
+        margin-top: 6px;
+    }
+
+    .single-item-media {
+        width: 120px;
+    }
+
+    .content-bottom p.h-10 {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .content-bottom-left span {
+        font-size: 11px;
+    }
+
+    .single-item .item-price-wrapper .item-price {
+        font-size: 16px;
+    }
+
+    .content-bottom {
+        margin-top: 12px;
+    }
+
+    .title-rating h3,
+    h3.main-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    .title-area {
+        gap: 0.25rem;
+    }
+
+    .price-cta-area.text-right {
+        margin-top: 0;
+    }
+
+    .item-content .content-bottom {
+        margin-top: 0px;
+    }
+
+    .item-content .review-area .p-2 {
+        padding: 4px;
+    }
+
+    .item-content .review-area .p-2 span {
+        font-size: 10px;
+    }
+
+    .item-content .review-area p {
+        font-size: 12px;
+    }
+
+    .item-content .review-area span {
+        font-size: 11px;
+    }
+
+    .item-content .rounded.text-sm.text-center {
+        line-height: 1;
+    }
+
+    .hotel-details-location-wrapper {
+        margin: 8px 0;
+    }
+
+    .blog.p-5 {
+        padding: .825rem;
+    }
+
+    .blog-item .blog-thumbnail {
+        flex-basis: 50%;
+    }
+
+    .blog-item.gap-4 {
+        gap: 10px;
+    }
+
+    h2.blog-title {
+        font-size: 24px;
+        line-height: 28px;
+        margin: 4px 0;
+    }
+
+    .flight-modal .text-card-foreground div {
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .service-single {
+        gap: 4px;
+        flex-basis: 100%;
+    }
+
+    .content-bottom-right {
+        margin-top: 0.2rem;
+    }
+
+    .title-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+
+    .single-item-content .content-bottom {
+        margin-top: 8px;
+        gap: 2px;
+    }
+
+    .single-item-content .content-bottom p.text-right {
+        font-size: 12px;
+        line-height: 1;
+        margin-bottom: 3px;
+    }
+
+    .single-item-content .content-bottom span.block.text-primary-dark.text-sm.font-sans {
+        line-height: 1;
+    }
+
+    .single-item-content .item-price-wrapper .flex.flex-col.items-end {
+        gap: 4px;
+    }
+
+    .single-item-content .item-price span:last-child {
+        font-size: 12px;
+    }
+
+    .rental-fleets-slick-area .specs {
+        gap: 4px;
+    }
+
+    .rental-fleets-slick-area .specs span.text-sm {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    h2.blog-title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .mobile-card .content-bottom {
+        align-items: flex-start !important;
+    }
+
+    .flight-modal .text-card-foreground div {
+        font-size: 10px;
+    }
+
+    .flight-modal,
+    .flight-modal .text-card-foreground .p-4 {
+        padding: 10px !important;
+    }
+
+    .flight-modal .text-card-foreground .gap-3 {
+        gap: 2px;
+    }
+
+    .flight-modal .text-card-foreground svg {
+        width: 14px;
+    }
+}
+
+@media screen and (max-width: 399px) and (min-width: 360px) {
+    .hotel-details-page-filter-area .to-date-wrapper {
+        position: relative;
+        left: -13%;
+    }
+}
+
+@media screen and (max-width: 396px) and (min-width: 360px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -8%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .canvas-menu-wrapper {
+        padding: 12px;
+    }
+
+    .login-register-btn {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .canvas-close {
+        margin-left: -4px;
+    }
+
+    .canvas-menu-wrapper div.mt-10 {
+        margin-top: 3.6rem;
+    }
+
+    .rating-section {
+        flex-wrap: wrap;
+    }
+
+    .rating-section .text-gray-600 {
+        flex-basis: 100%;
+    }
+
+    .header-area .location svg {
+        flex-basis: 8%;
+    }
+
+    .rating-area {
+        margin: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .rating-area span {
+        font-size: 13px;
+        line-height: 1;
+    }
+
+    .rating-area svg {
+        width: 13px;
+    }
+
+    .title-area h3 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .review-area {
+        gap: 0px;
+    }
+
+    .review-area p {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .review-area span {
+        font-size: 13px;
+        line-height: 1;
+    }
+
+    .location-wrapper span,
+    .map-wrapper button,
+    .distance-wrapper {
+        font-size: 12px !important;
+        line-height: 18px;
+    }
+
+    .location-wrapper {
+        gap: 4px;
+    }
+
+    .title-area {
+        margin-bottom: 12px;
+    }
+
+    .hotel-details-location-wrapper {
+        gap: 4px;
+        margin: 8px 0 0;
+    }
+
+    .item-media {
+        flex-basis: 70%;
+    }
+
+    .price-cta-area.text-right {
+        text-align: right;
+    }
+
+    .price-cta-area .justify-end {
+        justify-content: flex-end;
+    }
+
+    .location-wrapper span,
+    .map-wrapper button,
+    .distance-wrapper {
+        font-size: 11px !important;
+        line-height: 13px;
+    }
+
+    .location-wrapper svg,
+    .map-wrapper svg,
+    .distance-wrapper svg {
+        width: 12px;
+    }
+
+    .location-wrapper,
+    .map-wrapper,
+    .distance-wrapper {
+        gap: 4px;
+    }
+
+    .item-price-wrapper.mt-2 {
+        margin-top: 6px;
+    }
+
+    .private-chauffeur-slick-area .p-6.pt-0.px-2.pb-3 {
+        height: 139px !important;
+    }
+
+    .private-chauffeur-slick-area .services>div {
+        padding-bottom: 3px;
+    }
+
+    .blog-item .blog-thumbnail {
+        flex-basis: 75%;
+    }
+
+    h2.blog-title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    span.blog-cat {
+        font-size: 15px;
+    }
+
+    p.blog-excerpt {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 359px) and (min-width: 330px) {
+    .to-date-wrapper {
+        position: relative;
+        left: -4%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .canvas-menu-wrapper .flex-shrink-0.flex.items-center.gap-5 {
+        gap: 12px;
+    }
+}
