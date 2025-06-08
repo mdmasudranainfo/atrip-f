@@ -58,6 +58,7 @@ import DatePickerModal from "@/components/dataPiker/DatePickerModal";
 import MobileSummary from "@/components/activities/checkout/MobileSummary";
 import SearchLocationWithType from "@/components/filter/SearchLocationWithType";
 import SearchLocationWithType2 from "@/components/filter/SearchLocationWithType2";
+import SelectMap from "@/components/mapLocation/SelectMap";
 
 const timeSlots = [
   "08:00 AM",
@@ -408,14 +409,13 @@ export default function TransportCheckoutFinal({
                               Pick-Up Location
                             </FormLabel>
                             <FormControl>
-                              <SearchLocationWithType2
+                              <SelectMap
                                 defaultValue={
                                   bookingData?.booking?.pickupLocation
                                 }
                                 type="transport"
                                 locationId={Number(field.value)}
                                 placeholder="Select location"
-                                inputSize={2}
                                 onChangeValue={field.onChange}
                                 initialLocations={[]}
                               />
@@ -439,7 +439,7 @@ export default function TransportCheckoutFinal({
                             </FormDescription>
 
                             <FormControl>
-                              <SearchLocationWithType2
+                              <SelectMap
                                 defaultValue={
                                   bookingData?.booking?.dropLocation
                                 }
