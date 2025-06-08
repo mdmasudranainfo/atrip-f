@@ -1,8 +1,8 @@
-// components/LocationPickerModal.tsx
 "use client";
 
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
+import axios from "axios";
 
 interface Location {
   lat: number;
@@ -33,24 +33,51 @@ const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
 }) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+    libraries: ["places"],
   });
 
   const [selected, setSelected] = useState<Location | null>(null);
   const [loadingAddress, setLoadingAddress] = useState(false);
+  const [mapRef, setMapRef] = useState<google.maps.Map | null>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [suggestions, setSuggestions] = useState<any[]>([]);
 
-  const getAddressFromLatLng = async (
-    lat: number,
-    lng: number
-  ): Promise<string> => {
+  const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+
+  // Fetch suggestions from Google Places Autocomplete API
+  const fetchSuggestions = async (input: string) => {
+    const res = await axios.get(
+      `/api/google-places?input=${encodeURIComponent(input)}`
+    );
+    setSuggestions(res.data.predictions);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+
+    if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    debounceTimer.current = setTimeout(() => fetchSuggestions(value), 300);
+  };
+
+  const handleSuggestionSelect = async (
+    placeId: string,
+    description: string
+  ) => {
     try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+      const res = await axios.get(
+        `/api/google-place-details?place_id=${placeId}`
       );
-      const data = await response.json();
-      return data?.results?.[0]?.formatted_address || "Unknown location";
+      const location = res.data.result.geometry.location;
+      const lat = location.lat;
+      const lng = location.lng;
+
+      setSelected({ lat, lng, address: description });
+      setSuggestions([]);
+      setInputValue(description);
+      mapRef?.panTo({ lat, lng });
     } catch (err) {
-      console.log(err);
-      return "Unknown location err";
+      console.error("Failed to fetch place details", err);
     }
   };
 
@@ -64,6 +91,22 @@ const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
       setLoadingAddress(false);
     }
   }, []);
+
+  const getAddressFromLatLng = async (
+    lat: number,
+    lng: number
+  ): Promise<string> => {
+    try {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+      );
+      const data = await response.json();
+      return data?.results?.[0]?.formatted_address || "Unknown location";
+    } catch (err) {
+      console.log(err);
+      return "Unknown location";
+    }
+  };
 
   const handleConfirm = () => {
     if (selected) {
@@ -79,16 +122,48 @@ const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
       <div className="bg-white p-4 rounded-lg shadow-lg w-full max-w-2xl">
         <h2 className="text-xl font-semibold mb-4">Select Location</h2>
 
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={defaultCenter}
-          zoom={10}
-          onClick={handleClick}
-        >
-          {selected && (
-            <Marker position={{ lat: selected.lat, lng: selected.lng }} />
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search location"
+            className="w-full p-2 border border-gray-300 rounded"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          {suggestions.length > 0 && (
+            <ul className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded shadow z-10 max-h-60 overflow-y-auto">
+              {suggestions.map((sug) => (
+                <li
+                  key={sug.place_id}
+                  onClick={() =>
+                    handleSuggestionSelect(sug.place_id, sug.description)
+                  }
+                  className="p-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  {sug.description}
+                </li>
+              ))}
+            </ul>
           )}
-        </GoogleMap>
+        </div>
+
+        <div className="mt-4">
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={
+              selected
+                ? { lat: selected.lat, lng: selected.lng }
+                : defaultCenter
+            }
+            zoom={selected ? 14 : 10}
+            onClick={handleClick}
+            onLoad={(map) => setMapRef(map)}
+          >
+            {selected && (
+              <Marker position={{ lat: selected.lat, lng: selected.lng }} />
+            )}
+          </GoogleMap>
+        </div>
 
         {loadingAddress ? (
           <p className="mt-2 text-gray-500 italic">Fetching address...</p>
