@@ -16,6 +16,7 @@ import {
   CalendarCheck,
   Key,
   Loader2,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -433,9 +434,9 @@ export function TransparentNavbar({
           >
             <Button
               onClick={toggleDrawer}
-              className="canvas-close absolute top-4 h-10 w-10 left-4 mb-2 text-white text-2xl"
+              className="canvas-close absolute top-4 h-10 w-10 rounded-full left-4 mb-2 text-white text-2xl"
             >
-              X
+              <X />
             </Button>
 
             <div className="mt-10">
@@ -529,7 +530,7 @@ export function TransparentNavbar({
               </nav>
 
               {/* Right - Buttons */}
-              <div className="flex-shrink-0 flex items-center gap-5 ">
+              {/* <div className="flex-shrink-0 flex items-center gap-5 ">
                 {!!siteConfig.whatsAppId && (
                   <Link
                     href={`https://wa.me/${siteConfig.whatsAppId}`}
@@ -540,7 +541,7 @@ export function TransparentNavbar({
                     WhatsApp
                   </Link>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
