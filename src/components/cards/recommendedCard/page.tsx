@@ -202,7 +202,7 @@ const RecommendedCard = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="md:px-5 px-3 md:pb-4 pb-3  mt-2">
+                <div className="md:px-5 px-3 md:pb-4 pb-3  md:mt-2">
                   <div className="flex md:flex-row flex-col items-center justify-between h-[70px]">
                     <div className="text-primary-dark w-full">
                       {/* <span className="font-medium text-sm">
