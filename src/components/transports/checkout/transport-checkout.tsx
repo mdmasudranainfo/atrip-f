@@ -288,7 +288,7 @@ export default function TransportCheckoutFinal({
                     <CardContent>
                       <div className="hidden md:grid grid-cols-3 gap-4 text-sm text-gray-500 mb-2">
                         <div>TITLE</div>
-                        <div className="text-right mr-8">QUANTITY</div>
+                        <div className="text-right">QUANTITY</div>
                         <div className="text-right">PRICE</div>
                       </div>
 
@@ -339,17 +339,17 @@ export default function TransportCheckoutFinal({
                                       val >= 3 ? `block` : `hidden`
                                     }`}
                                   >
-                                    <button
+                                    <Button
                                       type="button"
                                       disabled={val <= 3}
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         updateQuantity(pkg, val - 1);
                                       }}
-                                      className="h-8 w-8 rounded-full border hover:bg-gray-100 flex items-center justify-center text-xl"
+                                      className="md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                     >
                                       −
-                                    </button>
+                                    </Button>
 
                                     <input
                                       type="number"
@@ -362,17 +362,17 @@ export default function TransportCheckoutFinal({
                                       className="w-12 h-8 text-center border-0 bg-transparent focus:ring-0"
                                     />
 
-                                    <button
+                                    <Button
                                       type="button"
                                       disabled={val >= pkg.max}
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         updateQuantity(pkg, val + 1);
                                       }}
-                                      className="h-8 w-8 rounded-full border hover:bg-gray-100 flex items-center justify-center text-xl"
+                                      className="md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                     >
                                       +
-                                    </button>
+                                    </Button>
                                   </div>
                                 )}
 
