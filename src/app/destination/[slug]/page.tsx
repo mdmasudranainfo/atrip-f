@@ -36,7 +36,7 @@ const DestinationDetails = async ({ params }: any) => {
         </div>
       </div>
       {/* Content Section */}
-      <div className="py-20 container mx-auto px-4">
+      <div className="md:py-20 py-10 container mx-auto px-4">
         {/* Image */}
         {data.image && (
           <div className="w-full  mx-auto mb-10">
@@ -45,13 +45,16 @@ const DestinationDetails = async ({ params }: any) => {
               alt={data.image.file_name}
               width={800}
               height={500}
-              className="object-cover rounded-[10px] w-full h-[700px]"
+              layout="responsive"
+              className="object-cover rounded-[10px] w-full max:h-[700px]"
               priority
             />
           </div>
         )}
 
-        <h1 className="text-[25px] mb-5 font-semibold text-[#273f5f]">About {data.name}</h1>
+        <h1 className="text-[25px] mb-5 font-semibold text-[#273f5f]">
+          About {data.name}
+        </h1>
         {/* Description */}
         <div
           className="w-full  text-lg text-gray-700"
