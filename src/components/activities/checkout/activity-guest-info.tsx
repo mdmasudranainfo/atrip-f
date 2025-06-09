@@ -247,7 +247,7 @@ export default function ActivityGuestInfo({
                                   size="icon"
                                   type="button"
                                   disabled={val <= 0}
-                                  className="md:h-8 h-6 md:w-8 w-6 rounded-full hover:bg-gray-50 md:border border-none"
+                                  className="md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                   onClick={() => updateQuantity(pkg, val - 1)}
                                 >
                                   <span className="text-xl font-medium">−</span>
@@ -261,7 +261,7 @@ export default function ActivityGuestInfo({
                                     if (!isNaN(value))
                                       updateQuantity(pkg, value);
                                   }}
-                                  className=" w-12 h-8 border-0 bg-transparent text-center focus-visible:ring-0 focus-visible:ring-offset-0"
+                                  className=" w-12  h-8 border-0 bg-transparent text-end focus-visible:ring-0 focus-visible:ring-offset-0"
                                 />
 
                                 <Button
@@ -269,7 +269,7 @@ export default function ActivityGuestInfo({
                                   size="icon"
                                   type="button"
                                   disabled={val >= pkg.max}
-                                  className=" md:h-8 h-6 md:w-8 w-6 rounded-full hover:bg-gray-50 md:border border-none"
+                                  className=" md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                   onClick={() => updateQuantity(pkg, val + 1)}
                                 >
                                   <span className="md:text-xl font-medium">
