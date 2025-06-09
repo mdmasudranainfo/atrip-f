@@ -100,13 +100,12 @@ export default function SearchLocationWithType2({
     async function fetchData() {
       setLoading(true);
       try {
-        console.log("Searching with query:", debouncedQuery);
         const { data: fetchLocations } = await getLocationsWithType(type, {
           service_name: debouncedQuery,
           page: 1,
           per_page: 10,
         });
-        console.log("Fetched locations:", fetchLocations);
+
         setLocations(fetchLocations);
         setSelectedIndex(-1);
       } catch (error) {
