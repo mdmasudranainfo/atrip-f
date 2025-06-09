@@ -216,34 +216,42 @@ export default function Footer() {
                     <div className="mt-2 space-y-2">
                       {/* Render only the content for the specific column */}
                       {sectionLinks[column - 1].map(
-                        (link: PaymentMethod, idx) => (
-                          <div key={idx} className="space-y-6">
-                            <ul className="space-y-3">
-                              <li>
-                                {link.name && (
-                                  <Link
-                                    href={link.path}
-                                    className="text-slate-700 hover:text-blue-600 transition-colors relative overflow-hidden group dark:text-slate-300 dark:hover:text-blue-400"
-                                  >
-                                    <span>{link.name}</span>
-                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 dark:bg-blue-400"></span>
-                                  </Link>
-                                )}
-                                {link.image && (
-                                  <div className="transition-transform hover:scale-105">
-                                    <Image
-                                      src={link.image || "/placeholder.svg"}
-                                      alt={`Payment method logo`}
-                                      width={150}
-                                      height={30}
-                                      className="object-contain"
-                                    />
-                                  </div>
-                                )}
-                              </li>
-                            </ul>
-                          </div>
-                        )
+                        (link: PaymentMethod, idx) => {
+                          return (
+                            <div key={idx} className="space-y-6">
+                              <ul className="space-y-3">
+                                <li>
+                                  {link.name && (
+                                    <Link
+                                      href={
+                                        titles[column - 1] ===
+                                        "Top Destinations"
+                                          ? `/destination/${link.path}`
+                                          : link.path
+                                      }
+                                      // href={link.path}
+                                      className="text-slate-700 hover:text-blue-600 transition-colors relative overflow-hidden group dark:text-slate-300 dark:hover:text-blue-400"
+                                    >
+                                      <span>{link.name}</span>
+                                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 dark:bg-blue-400"></span>
+                                    </Link>
+                                  )}
+                                  {link.image && (
+                                    <div className="transition-transform hover:scale-105">
+                                      <Image
+                                        src={link.image || "/placeholder.svg"}
+                                        alt={`Payment method logo`}
+                                        width={150}
+                                        height={30}
+                                        className="object-contain"
+                                      />
+                                    </div>
+                                  )}
+                                </li>
+                              </ul>
+                            </div>
+                          );
+                        }
                       )}
                     </div>
                   </AccordionContent>
