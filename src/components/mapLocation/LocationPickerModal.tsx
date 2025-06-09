@@ -20,10 +20,10 @@ const containerStyle = {
   width: "100%",
   height: "400px",
 };
-
+// 23.9759468289481, 54.33126540257541
 const defaultCenter = {
-  lat: 23.8103,
-  lng: 90.4125,
+  lat: 23.9759468289481,
+  lng: 54.33126540257541,
 };
 
 const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
@@ -155,7 +155,7 @@ const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
                 ? { lat: selected.lat, lng: selected.lng }
                 : defaultCenter
             }
-            zoom={selected ? 14 : 10}
+            zoom={selected ? 14 : 8}
             onClick={handleClick}
             onLoad={(map) => setMapRef(map)}
           >
