@@ -241,7 +241,7 @@ export default function ActivityGuestInfo({
                               </div>
 
                               {/* Quantity Selector */}
-                              <div className="flex items-center justify-end md:space-x-4 ">
+                              <div className="flex items-center justify-end md:space-x-4 space-x-2 ">
                                 <Button
                                   variant="outline"
                                   size="icon"
@@ -250,19 +250,12 @@ export default function ActivityGuestInfo({
                                   className="md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                   onClick={() => updateQuantity(pkg, val - 1)}
                                 >
-                                  <span className="text-xl font-medium">−</span>
+                                  <span className="text-xl font-medium mb-[2px]">
+                                    −
+                                  </span>
                                 </Button>
 
-                                <Input
-                                  type="number"
-                                  value={val}
-                                  onChange={(e) => {
-                                    const value = parseInt(e.target.value);
-                                    if (!isNaN(value))
-                                      updateQuantity(pkg, value);
-                                  }}
-                                  className=" w-12  h-8 border-0 bg-transparent text-end focus-visible:ring-0 focus-visible:ring-offset-0"
-                                />
+                                <span>{val}</span>
 
                                 <Button
                                   variant="outline"
@@ -272,7 +265,7 @@ export default function ActivityGuestInfo({
                                   className=" md:h-8 h-6 md:w-8 w-6 rounded-full bg-[#d1d8ec] hover:bg-primary hover:text-white ease-in-out duration-300 md:border border-none"
                                   onClick={() => updateQuantity(pkg, val + 1)}
                                 >
-                                  <span className="md:text-xl font-medium">
+                                  <span className="md:text-xl font-medium mb-[2px]">
                                     +
                                   </span>
                                 </Button>
