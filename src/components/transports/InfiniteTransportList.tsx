@@ -12,6 +12,7 @@ import {
   getTransportFromSession,
   removeSessionData,
 } from "@/utils/sessionCache";
+import SpinnerLoader from "../share/spiner/SpinnerLoader";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -186,7 +187,7 @@ export default function InfiniteTransportList({
           ref={ref}
           className="h-10 mt-8 flex justify-center items-center text-gray-600 text-sm"
         >
-          {loading ? <Skeleton /> : "Scroll to load more"}
+          {loading ? <SpinnerLoader /> : "Scroll to load more"}
         </div>
       )}
     </div>

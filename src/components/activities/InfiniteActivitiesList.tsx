@@ -9,6 +9,7 @@ import ResultNotFound from "@/components/notFound/page";
 import ItemSorting from "@/components/hotels/hotelFilter/ItemSorting";
 import { getActivitiesFromSession } from "@/utils/sessionCache";
 import { EventActivityRow } from "@/types/activity";
+import SpinnerLoader from "../share/spiner/SpinnerLoader";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -171,7 +172,7 @@ export default function InfiniteActivitiesList({
           ref={ref}
           className="h-10 mt-8 flex justify-center items-center text-gray-500 text-sm"
         >
-          {loading ? <p>Loading....</p> : "Scroll to load more"}
+          {loading ? <SpinnerLoader /> : "Scroll to load more"}
         </div>
       )}
     </div>
