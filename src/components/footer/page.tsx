@@ -113,14 +113,19 @@ export default function Footer() {
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { icon: Facebook, label: "Facebook" },
+                    {
+                      icon: Facebook,
+                      label: "Facebook",
+                      link: "https://www.facebook.com/share/14GDkKXeRP4",
+                    },
                     { icon: Instagram, label: "Instagram" },
                     { icon: Twitter, label: "Twitter" },
                     { icon: Youtube, label: "Youtube" },
                     { icon: Linkedin, label: "LinkedIn" },
                   ].map((social, index) => (
                     <Link
-                      href="#"
+                      target="_blank"
+                      href={social.link ? social.link : "#"}
                       key={index}
                       aria-label={social.label}
                       className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition-all hover:bg-blue-600 hover:shadow-md dark:bg-slate-800"
