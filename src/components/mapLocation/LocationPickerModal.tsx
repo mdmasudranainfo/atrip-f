@@ -103,7 +103,7 @@ const LocationPickerModal: React.FC<LocationPickerModalProps> = ({
       const data = await response.json();
       return data?.results?.[0]?.formatted_address || "Unknown location";
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return "Unknown location";
     }
   };
