@@ -41,6 +41,10 @@ const nextConfig: NextConfig = {
         protocol: "http",
         hostname: "168.231.110.101",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
     ],
   },
   experimental: {

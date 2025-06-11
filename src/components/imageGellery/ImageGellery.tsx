@@ -9,7 +9,8 @@ import { useState } from "react";
 import { TourReviewList } from "@/types/tourTypes";
 import { Review } from "@/types/review";
 import MobilePhototSlider from "./MobilePhototSlider";
-import { EventRow } from "@/types/activity";
+import ReactPlayer from "react-player/youtube";
+import { CirclePlay, Play } from "lucide-react";
 
 interface ImageGalleryProps {
   data: any;
@@ -52,7 +53,26 @@ export function ImageGallery({
 
         {/* grid */}
         <div className="md:grid hidden  grid-cols-1 md:grid-cols-2 gap-2">
-          <div className="md:col-span-1 aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="md:col-span-1 aspect-[4/3] overflow-hidden rounded-lg relative">
+            {data?.video ? (
+              <div
+                onClick={() => setShowGallery(true)}
+                className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+              >
+                <Play
+                  color="white"
+                  className="cursor-pointer bg-gray-900 p-2 rounded-full "
+                  size={40}
+                />
+              </div>
+            ) : null}
+            {/* <ReactPlayer
+              url={data?.video}
+              playing
+              controls
+              width="100%"
+              height="100%"
+            /> */}
             {images?.length !== 0 && (
               <Image
                 src={images[0]?.large}
@@ -103,6 +123,7 @@ export function ImageGallery({
           </div>
         </div>
         <ImageGalleryModal
+          video={data?.video}
           open={showGallery}
           onClose={() => setShowGallery(false)}
           hotelName={title}

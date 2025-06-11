@@ -3,7 +3,7 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Review } from "@/types/review";
 import { TourReviewList } from "@/types/tourTypes";
-import { X } from "lucide-react";
+import { Play, X } from "lucide-react";
 import Image from "next/image";
 import RatingStar from "../rating-star";
 import { useState } from "react";
@@ -12,6 +12,7 @@ import "yet-another-react-lightbox/styles.css";
 import ImageGalleryModalSingle from "./ImageGalleryModalSingle";
 
 interface GalleryModalProps {
+  video: string;
   open: boolean;
   onClose: () => void;
   hotelName: string;
@@ -26,6 +27,7 @@ interface GalleryModalProps {
 }
 
 export function ImageGalleryModal({
+  video,
   open,
   onClose,
   hotelName,
@@ -48,7 +50,22 @@ export function ImageGalleryModal({
           <div className="flex-1 overflow-y-auto p-4">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
               {images.hotelUploads.map((image, index) => (
-                <div key={index} className="break-inside-avoid">
+                <div key={index} className="break-inside-avoid relative">
+                  {video && index == 0 ? (
+                    <div
+                      onClick={() => {
+                        setLightboxIndex(index);
+                        setLightboxOpen(true);
+                      }}
+                      className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+                    >
+                      <Play
+                        color="white"
+                        className="cursor-pointer bg-gray-900 p-2 rounded-full "
+                        size={40}
+                      />
+                    </div>
+                  ) : null}
                   <Image
                     width={800}
                     height={600}
@@ -110,6 +127,7 @@ export function ImageGalleryModal({
       {/* Lightbox for Fullscreen Image Gallery */}
 
       <ImageGalleryModalSingle
+        video={video}
         open={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
         hotelName={hotelName}
@@ -118,6 +136,7 @@ export function ImageGalleryModal({
         reviewCount={reviewCount}
         images={images}
         reviews={reviews}
+        lightboxIndex={lightboxIndex !== 0 ? lightboxIndex + 1 : 0}
       />
     </Dialog>
   );
