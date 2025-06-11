@@ -35,6 +35,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="p:domain_verify"
+          content="afcd172d6c3d16015ed0b33dbc15e23d"
+        />
+
         {/* Meta Pixel Code */}
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
