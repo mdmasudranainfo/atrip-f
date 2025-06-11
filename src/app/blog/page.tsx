@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+
 import Image from "next/image";
-import axios from "axios";
 
 import { TransparentNavbar } from "@/components/header/transparentNav/TransparentNav";
-import FilterServiceGroup from "@/components/filter/filter-service-group";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -37,14 +35,15 @@ const Blog = () => {
     fetchBlogs();
   }, []);
 
-
   return (
     <>
       <div className="relative h-full :max-h-[600px] bg-about-us w-full  from-blue-900 via-blue-950 to-blue-950">
         <div className="bg-[#00000066] h-full w-full absolute top-0 bottom-0"></div>
         <TransparentNavbar isBgWhite={false} />
         <div className="w-full container pb-20 pt-12 m-auto relative z-9">
-          <h1 className="mb-4 text-5xl font-bold text-white text-center">Blog</h1>
+          <h1 className="mb-4 text-5xl font-bold text-white text-center">
+            Blog
+          </h1>
           <div className="flex justify-center items-center gap-2">
             <span className="text-white">Home</span>
             <div className="w-1 h-1 bg-white rounded-full"></div>
@@ -58,8 +57,9 @@ const Blog = () => {
             blogs.map((blog: any, index: number) => (
               <div
                 key={blog.id}
-                className={`blog-item flex items-stretch gap-4 border-b border-b-gray-300 pb-10 mb-10 ${index % 2 === 0 ? "even-item" : "odd-item flex-row-reverse"
-                  }`}
+                className={`blog-item md:flex items-stretch  gap-4 border-b border-b-gray-300 pb-10 mb-10 ${
+                  index % 2 === 0 ? "even-item" : "odd-item flex-row-reverse"
+                }`}
               >
                 <div className="blog-thumbnail relative w-full h-auto">
                   <Image
@@ -69,7 +69,11 @@ const Blog = () => {
                     className="object-cover rounded-xl"
                   />
                 </div>
-                <div className={`blog-content basis-[160%] ${index % 2 !== 0 ? "text-right" : ""}`}>
+                <div
+                  className={`blog-content basis-[160%] ${
+                    index % 2 !== 0 ? "text-right" : ""
+                  }`}
+                >
                   <span className="blog-cat inline-block text-blue-600 capitalize font-medium">
                     {blog.category || "Uncategorized"}
                   </span>
@@ -77,7 +81,13 @@ const Blog = () => {
                     {blog.title}
                   </h2>
                   <p className="blog-excerpt text-[#1A1A1A] text-base font-normal">
-                    {blog.content || "No description available."}
+                    {/* {blog.content || "No description available."} */}
+                    <article className="prose prose-slate prose-lead:text-secondary-foreground dark:prose-invert xl:prose-md w-full mx-auto max-w-4xl">
+                      <div
+                        className="font-normal leading-7"
+                        dangerouslySetInnerHTML={{ __html: blog.content }}
+                      />
+                    </article>
                   </p>
                 </div>
               </div>

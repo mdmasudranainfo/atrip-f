@@ -30,7 +30,7 @@ const destinations = [
   // { name: "Terms Of Service", path: "/terms-of-service" },
   // { name: "Dispute Resolution Policy", path: "/dispute-resolution-policy" },
   { name: "Privacy Policy", path: "/acceptable-use-policy" },
-  // { name: "Blog", path: "/blog" },
+  { name: "Blog", path: "/blog" },
   { name: "About Us", path: "/about-us" },
   // { name: "Careers", path: "/careers" },
   { name: "How We Works", path: "/works" },
