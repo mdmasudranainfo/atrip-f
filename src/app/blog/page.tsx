@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { TransparentNavbar } from "@/components/header/transparentNav/TransparentNav";
+import { CloudCog } from "lucide-react";
+import Link from "next/link";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -52,50 +54,41 @@ const Blog = () => {
         </div>
       </div>
       <div className="container">
-        <div className="blog mt-20 mb-24">
+
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-10 gap-4">
           {blogs.length > 0 ? (
-            blogs.map((blog: any, index: number) => (
-              <div
-                key={blog.id}
-                className={`blog-item md:flex items-stretch  gap-4 border-b border-b-gray-300 pb-10 mb-10 ${
-                  index % 2 === 0 ? "even-item" : "odd-item flex-row-reverse"
-                }`}
-              >
-                <div className="blog-thumbnail relative w-full h-auto">
+            blogs.map((blog: any, index: number) => {
+              const parsedContent = JSON.parse(blog.content);
+
+              
+
+              
+              return <div key={blog.id} className="blog-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition-transform hover:-translate-y-1 hover:shadow-lg">
+                <div className="relative w-full h-56">
                   <Image
                     src={blog.image || "/default-image.jpg"}
                     alt={blog.title}
                     fill
-                    className="object-cover rounded-xl"
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <div
-                  className={`blog-content basis-[160%] ${
-                    index % 2 !== 0 ? "text-right" : ""
-                  }`}
-                >
-                  <span className="blog-cat inline-block text-blue-600 capitalize font-medium">
-                    {blog.category || "Uncategorized"}
-                  </span>
-                  <h2 className="blog-title text-[#1A1A1A] text-4xl font-bold tracking-[-2%] my-3 transition-colors duration-300 ">
-                    {blog.title}
-                  </h2>
-                  <p className="blog-excerpt text-[#1A1A1A] text-base font-normal">
-                    {/* {blog.content || "No description available."} */}
-                    <article className="prose prose-slate prose-lead:text-secondary-foreground dark:prose-invert xl:prose-md w-full mx-auto max-w-4xl">
-                      <div
-                        className="font-normal leading-7"
-                        dangerouslySetInnerHTML={{ __html: blog.content }}
-                      />
-                    </article>
-                  </p>
+                <div className="flex flex-col flex-1 p-5">
+                  <h2 className="text-lg font-semibold text-[#1A1A1A] mb-2 line-clamp-2">{blog.title}</h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-2 mb-4">{parsedContent[0].title || "No description available."}</p>
+
+                  <Link href={`/blog/${blog.id}`} className="text-purple-600 font-medium hover:underline mt-auto">Read more</Link>
+                  {/* <a href={`/blog/${blog.slug || blog.id}`} className="text-purple-600 font-medium hover:underline mt-auto">Read more</a> */}
                 </div>
               </div>
-            ))
+            })
           ) : (
             <p className="text-center text-gray-500 mt-24">Loading blogs...</p>
           )}
         </div>
+
+
+
+
       </div>
     </>
   );
