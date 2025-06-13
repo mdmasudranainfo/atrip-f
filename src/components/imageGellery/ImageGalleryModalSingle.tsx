@@ -92,18 +92,24 @@ const ImageGalleryModalSingle = ({
         {/* Left Section */}
         <div className="flex-1 flex flex-col relative">
           {/* Arrows */}
-          <button
-            onClick={scrollPrev}
-            className="absolute z-10 top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute z-10 top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-          >
-            <ChevronRight size={24} />
-          </button>
+
+          <div className=" absolute -top-12 left-0 h-full flex items-center">
+            <button
+              onClick={scrollPrev}
+              className=" z-10  transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+            >
+              <ChevronLeft size={24} />
+            </button>
+          </div>
+
+          <div className=" absolute -top-12 right-0 h-full flex items-center">
+            <button
+              onClick={scrollNext}
+              className=" z-10 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
 
           {/* Main Carousel */}
           <div className="p-4">

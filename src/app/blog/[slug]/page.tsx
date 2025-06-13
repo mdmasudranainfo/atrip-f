@@ -90,8 +90,6 @@ const BlogDetails = async (context: { params: Promise<{ slug: string }> }) => {
         {/* Main Content */}
         <section className="flex-1 space-y-10">
           {parsedContent?.map((item: any, index: number) => {
-            const isFirst = index === 0;
-
             return (
               <div
                 key={index}
