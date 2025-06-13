@@ -1,30 +1,5 @@
 import { TransparentNavbar } from "@/components/header/transparentNav/TransparentNav";
-import { Button } from "@/components/ui/button";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  BookCheck,
-  CalendarIcon,
-  Hotel,
-  MapPin,
-  ShieldQuestion,
-  SlidersHorizontal,
-  SquarePlus,
-  Star,
-} from "lucide-react";
-import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Check } from "lucide-react";
-import { ImageGallery } from "@/components/imageGellery/ImageGellery";
-import { HiOutlineSpeakerphone } from "react-icons/hi";
-import { formatPrice } from "@/lib/utils";
+
 import React from "react";
 import Image from "next/image";
 
@@ -90,58 +65,61 @@ const BlogDetails = async (context: { params: Promise<{ slug: string }> }) => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+          <h1 className="text-2xl md:text-5xl font-bold text-white mb-2">
             {newsData.title}
           </h1>
         </div>
       </div>
-      <div className="container mx-auto py-10 flex  gap-5">
-        <div className="w-[300px] mt-5 sticky top-0 h-fit hidden md:block">
-          <ul>
-            {parsedContent?.map((item: any, index: number) => {
-              return (
-                <li key={index}>
-                  <a
-                    href={`#${index + 1}`}
-                    className="text-sm text-blue-500 cursor-pointer my-2"
-                  >
-                    {" "}
-                    {index + 1}. {item.title}
-                  </a>
-                </li>
-              );
-            })}
+      <div className="container mx-auto py-10 flex flex-col md:flex-row gap-6">
+        {/* Sidebar */}
+        <aside className="w-full md:w-[300px] sticky top-10 h-fit hidden md:block">
+          <ul className="space-y-3 bg-white shadow rounded-lg p-4 border border-gray-100">
+            {parsedContent?.map((item: any, index: number) => (
+              <li key={index}>
+                <a
+                  href={`#${index + 1}`}
+                  className="block text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  {index + 1}. {item.title}
+                </a>
+              </li>
+            ))}
           </ul>
-        </div>
+        </aside>
 
-        <div className="">
+        {/* Main Content */}
+        <section className="flex-1 space-y-10">
           {parsedContent?.map((item: any, index: number) => {
+            const isFirst = index === 0;
+
             return (
-              <div key={index} id={`${index + 1}`}>
-                <h2 className="text-2xl font-bold py-2 text-center">
+              <div
+                key={index}
+                id={`${index + 1}`}
+                className={` bg-white shadow-lg rounded-xl overflow-hidden p-6 border border-gray-100 w-full `}
+              >
+                <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
                   {item.title}
                 </h2>
-                <div className="flex justify-center ">
+
+                <div className="flex justify-center mb-4">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={500}
+                    width={800}
                     height={500}
                     layout="responsive"
-                    className="rounded-lg  overflow-hidden"
+                    className="rounded-lg"
                   />
                 </div>
 
-                <article className=" ">
-                  <div
-                    className="w-full text-gray-700 py-2"
-                    dangerouslySetInnerHTML={{ __html: item.content }}
-                  />
+                <article className="prose max-w-none prose-img:rounded-lg prose-headings:text-gray-900 prose-p:text-gray-700">
+                  <div dangerouslySetInnerHTML={{ __html: item.content }} />
                 </article>
               </div>
             );
           })}
-        </div>
+        </section>
       </div>
     </div>
   );
