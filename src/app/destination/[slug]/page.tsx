@@ -24,7 +24,7 @@ const DestinationDetails = async ({ params }: any) => {
 
   // Parse content sections if they exist
   const contentSections = JSON.parse(data?.description);
-  console.log(contentSections);
+  
 
   return (
     <div>
