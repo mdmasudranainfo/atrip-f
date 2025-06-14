@@ -74,7 +74,7 @@ const BlogDetails = async (context: { params: Promise<{ slug: string }> }) => {
 
         
         {/* Sidebar */}
-        <aside className="w-full md:w-[300px] sticky top-10 h-fit hidden md:block">
+        <aside className="w-full md:w-[300px] sticky top-2 max-h-screen hidden md:block overflow-y-scroll">
           <ul className="space-y-3 bg-white shadow rounded-lg p-4 border border-gray-100">
             {parsedContent?.map((item: any, index: number) => (
               <li key={index}>
