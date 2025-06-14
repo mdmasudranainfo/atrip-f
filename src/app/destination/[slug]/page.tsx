@@ -91,7 +91,7 @@ const DestinationDetails = async ({ params }: any) => {
               {data.image && (
                 <div className="flex justify-center mb-4">
                   <Image
-                    src={data.image.file_path}
+                    src={item?.image}
                     alt={data.image.file_name}
                     width={800}
                     height={500}

@@ -2,17 +2,23 @@
 
 interface Params {
   featured?: number;
+  page?: number;
+  per_page?: number;
 }
 
 export const getAllDestinations = async (params:{params:Params}) => {
-  const {featured} = params.params;
+  const {featured, page, per_page} = params.params;
 
-  const query = featured ? `?featured=${featured}` : "";
+  const queryParams = new URLSearchParams();
+  
+  if (featured) queryParams.append('featured', featured.toString());
+  if (page) queryParams.append('page', page.toString());
+  if (per_page) queryParams.append('per_page', per_page.toString());
+
+  const query = queryParams.toString() ? `?${queryParams.toString()}` : "";
 
   const response = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_API_ENDPOINT
-    }/destination${query}`,
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/destination${query}`,
     {
       method: "GET",
       headers: {
