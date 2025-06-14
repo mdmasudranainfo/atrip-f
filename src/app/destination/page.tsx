@@ -5,13 +5,14 @@ import { TransparentNavbar } from "@/components/header/transparentNav/Transparen
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PageProps {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
-  };
+  }>;
+  params: Promise<Record<string, never>>;
 }
 
 const DestinationPage = async ({ searchParams }: PageProps) => {
-  const currentPage = Number(searchParams.page) || 1;
+  const currentPage = Number(await searchParams) || 1;
   const perPage = 9;
 
   const param = {
