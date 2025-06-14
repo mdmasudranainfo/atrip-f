@@ -1,5 +1,5 @@
 import { TransparentNavbar } from "@/components/header/transparentNav/TransparentNav";
-
+import BlogFilterDrawer from "@/components/blog/BlogFilterDrawer";
 import React from "react";
 import Image from "next/image";
 
@@ -71,6 +71,8 @@ const BlogDetails = async (context: { params: Promise<{ slug: string }> }) => {
         </div>
       </div>
       <div className="container mx-auto py-10 flex flex-col md:flex-row gap-6">
+
+        
         {/* Sidebar */}
         <aside className="w-full md:w-[300px] sticky top-10 h-fit hidden md:block">
           <ul className="space-y-3 bg-white shadow rounded-lg p-4 border border-gray-100">
@@ -119,6 +121,8 @@ const BlogDetails = async (context: { params: Promise<{ slug: string }> }) => {
           })}
         </section>
       </div>
+
+      <BlogFilterDrawer contents={parsedContent} />
     </div>
   );
 };
