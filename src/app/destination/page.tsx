@@ -74,6 +74,11 @@ const DestinationPage = async ({ searchParams }: PageProps) => {
     return pages;
   };
 
+  // use loading data aste deri hole akta loading dehabe 
+  if (destinations.data.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="relative h-full max-h-[600px] bg-about-us w-full from-blue-900 via-blue-950 to-blue-950">
@@ -93,8 +98,13 @@ const DestinationPage = async ({ searchParams }: PageProps) => {
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-          {destinations.data.map((destination: any) => {
-            const parsedContent = JSON.parse(destination?.description);
+          {destinations?.data?.map((destination: any) => {
+            let parsedContent;
+            try {
+              parsedContent = destination?.description ? JSON.parse(destination.description) : null;
+            } catch (error) {
+              parsedContent = null;
+            }
             return (
               <div
                 key={destination.id}
@@ -113,7 +123,7 @@ const DestinationPage = async ({ searchParams }: PageProps) => {
                     {destination.name}
                   </h2>
                   <p className="text-gray-600 mb-4 line-clamp-3">
-                    {parsedContent[0].title || "No description available."}
+                    {parsedContent?.[0]?.title || "No description available."}
                   </p>
                   <div className="flex items-center justify-end">
                     <Link
