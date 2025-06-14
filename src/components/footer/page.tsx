@@ -47,11 +47,17 @@ const titles = ["Top Destinations", "Discover", "Payment Methods"];
 export default function Footer() {
   const [links, setLinks] = useState<LinkItem[]>([]);
 
+  const param = {
+    params: {
+      featured: 1
+    }
+  }
+
   useEffect(() => {
     const fetchLinks = async () => {
       try {
-        const { data } = await getAllDestinations();
-        setLinks(data);
+        const { data } = await getAllDestinations(param);
+        setLinks(data?.data);
       } catch (error) {
         console.error("Error fetching links:", error);
       }
@@ -61,7 +67,7 @@ export default function Footer() {
   }, []);
 
   const sectionLinks = [
-    links,
+    [{name: "All Destination", slug: "/"},...links]?.map((link) => ({ name: link.name, path: link.slug })),
     destinations.map((dest) => ({ name: dest.name, path: dest.path })),
     paymentMethods,
   ];

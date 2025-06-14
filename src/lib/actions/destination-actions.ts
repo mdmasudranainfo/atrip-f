@@ -1,10 +1,18 @@
 "use server";
 
-export const getAllDestinations = async () => {
+interface Params {
+  featured?: number;
+}
+
+export const getAllDestinations = async (params:{params:Params}) => {
+  const {featured} = params.params;
+
+  const query = featured ? `?featured=${featured}` : "";
+
   const response = await fetch(
     `${
       process.env.NEXT_PUBLIC_API_ENDPOINT
-    }/destination`,
+    }/destination${query}`,
     {
       method: "GET",
       headers: {
