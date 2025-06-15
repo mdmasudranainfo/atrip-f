@@ -41,13 +41,13 @@ const Blog = () => {
 
       const data = await response.json();
       const newBlogs = data?.data || [];
-      
+
       if (pageNum === 1) {
         setBlogs(newBlogs);
       } else {
         setBlogs(prev => [...prev, ...newBlogs]);
       }
-      
+
       setHasMore(newBlogs.length === 6);
     } catch (err) {
       console.error("Error fetching blog data:", err);
@@ -116,7 +116,7 @@ const Blog = () => {
                     <h2 className="text-lg font-semibold text-[#1A1A1A] mb-2 line-clamp-2">{blog.title}</h2>
                     <p className="text-gray-600 text-sm flex-1 line-clamp-2 mb-4">{parsedContent[0].title || "No description available."}</p>
 
-                    <Link href={`/blog/${blog.id}`} className="text-purple-600 font-medium hover:underline mt-auto">Read more</Link>
+                    <Link rel="noopener noreferrer" target="_blank" href={`/blog/${blog.id}`} className="text-purple-600 font-medium hover:underline mt-auto">Read more</Link>
                     {/* <a href={`/blog/${blog.slug || blog.id}`} className="text-purple-600 font-medium hover:underline mt-auto">Read more</a> */}
                   </div>
                 </div>
@@ -126,7 +126,7 @@ const Blog = () => {
             <p className="text-center text-gray-500 mt-24">Loading blogs...</p>
           )}
         </div>
-        
+
         {/* Loading indicator and observer target */}
         <div ref={observerTarget} className="h-10 flex items-center justify-center">
           {loading && <p className="text-gray-500"><SpinnerLoader /></p>}
