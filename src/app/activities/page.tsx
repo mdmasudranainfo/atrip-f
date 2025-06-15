@@ -53,7 +53,7 @@ const Activities = async ({ searchParams }: any) => {
         <div className="bg-[#00000066] h-full w-full absolute top-0 bottom-0"></div>
         <TransparentNavbar isBgWhite={false} />
         <FilterServiceGroup
-          label="Attraction"
+          label="Get All UAE Attraction Tickets in one stop – Burj Khalifa, Ferrari world tickets, and many more."
           defaultValue="activities"
           selectedLocations={selectedLocations}
         />

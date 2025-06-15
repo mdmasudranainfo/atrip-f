@@ -43,7 +43,7 @@ export default function FilterServiceGroup({
     >
       <div className="m-auto">
         {!!label && (
-          <h1 className="mt-10 mb-2 text-2xl sm:text-5xl font-bold text-white mx-3 md:mx-0">
+          <h1 className="mt-10 mb-4 text-xl sm:text-3xl font-bold text-white text-center mx-auto max-w-4xl tracking-tight px-2">
             {label}
           </h1>
         )}

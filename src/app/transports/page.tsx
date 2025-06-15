@@ -45,7 +45,7 @@ const Transports = async ({ searchParams }: any) => {
         <div className="bg-[#00000066] h-full w-full absolute top-0 bottom-0"></div>
         <TransparentNavbar isBgWhite={false} />
         <FilterServiceGroup
-          label="Transports"
+          label="Expertise Chauffeur Services Throughout UAE - Hire your Car with Chauffeur Now"
           defaultValue="transports"
           selectedLocations={selectedLocations}
         />
