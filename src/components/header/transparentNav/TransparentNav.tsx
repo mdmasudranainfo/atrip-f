@@ -145,7 +145,7 @@ export function TransparentNavbar({
             </NavLink>
           </span>
 
-          <span onClick={() => removeSessionData("chauffeurData")}>
+          {/* <span onClick={() => removeSessionData("chauffeurData")}>
             <NavLink
               isBgWhite={isBgWhite}
               href="/chauffeur-with-car"
@@ -153,7 +153,7 @@ export function TransparentNavbar({
             >
               Car+Driver
             </NavLink>
-          </span>
+          </span> */}
           {/* <NavLink
             isBgWhite={isBgWhite}
             href="/tour"
