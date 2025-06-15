@@ -101,9 +101,8 @@ export function TransparentNavbar({
   return (
     <header className="bg-about-us w-full py-4 relative z-10">
       <div
-        className={`${
-          isBgWhite ? "bg-white" : "bg-[#00000066]"
-        } h-full w-full absolute top-0 bottom-0`}
+        className={`${isBgWhite ? "bg-white" : "bg-[#00000066]"
+          } h-full w-full absolute top-0 bottom-0`}
       ></div>
       <div className="container main-nav-container mx-auto md:px-0 px-2 gap-8 flex  items-center relative justify-between">
         <div className="flex-shrink-0">
@@ -146,6 +145,15 @@ export function TransparentNavbar({
             </NavLink>
           </span>
 
+          <span onClick={() => removeSessionData("chauffeurData")}>
+            <NavLink
+              isBgWhite={isBgWhite}
+              href="/chauffeur-with-car"
+              isActive={pathname.startsWith("/chauffeur-with-car")}
+            >
+              Car+Driver
+            </NavLink>
+          </span>
           {/* <NavLink
             isBgWhite={isBgWhite}
             href="/tour"
@@ -174,13 +182,7 @@ export function TransparentNavbar({
           >
             Umrah
           </NavLink>
-          <NavLink
-            isBgWhite={isBgWhite}
-            href="/chauffeur-with-car"
-            isActive={pathname.startsWith("/chauffeur-with-car")}
-          >
-            Car+Driver
-          </NavLink>
+        
           <NavLink
             isBgWhite={isBgWhite}
             href="/hotels"
@@ -414,9 +416,8 @@ export function TransparentNavbar({
 
             <Button
               onClick={toggleDrawer}
-              className={`text-2xl p-2 pr-0 !bg-transparent rounded-full shadow-none hover:bg-transparent ${
-                isBgWhite ? "text-dark" : "text-white"
-              }  focus:outline-none`}
+              className={`text-2xl p-2 pr-0 !bg-transparent rounded-full shadow-none hover:bg-transparent ${isBgWhite ? "text-dark" : "text-white"
+                }  focus:outline-none`}
             >
               ☰
             </Button>
@@ -424,13 +425,11 @@ export function TransparentNavbar({
 
           {/* Drawer content */}
           <div
-            className={`canvas-menu-wrapper fixed !z-10 top-0 right-0 w-[60%]  h-full ${
-              isBgWhite
+            className={`canvas-menu-wrapper fixed !z-10 top-0 right-0 w-[60%]  h-full ${isBgWhite
                 ? "bg-white text-primary-dark"
                 : "bg-gray-800 text-white"
-            }   p-6 transition-transform transform ${
-              drawerOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+              }   p-6 transition-transform transform ${drawerOpen ? "translate-x-0" : "translate-x-full"
+              }`}
           >
             <Button
               onClick={toggleDrawer}
@@ -566,13 +565,12 @@ function NavLink({ href, children, isActive, isBgWhite }: NavLinkProps) {
       href={href}
       onClick={handleClick}
       className={cn(
-        `relative px-1 py-2 text-md font-bold ${
-          isBgWhite
-            ? "text-primary-dark hover:text-primary-dark/90"
-            : "text-gray-200 hover:text-white"
+        `relative px-1 py-2 text-md font-bold ${isBgWhite
+          ? "text-primary-dark hover:text-primary-dark/90"
+          : "text-gray-200 hover:text-white"
         } transition-colors flex items-center gap-2`,
         isActive &&
-          "active-menu text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white"
+        "active-menu text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white"
       )}
     >
       {isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
