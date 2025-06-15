@@ -36,8 +36,8 @@ const LandingPage = () => {
 
         {/* Attractions section */}
         <section className="pt-11 container mx-auto mt-0 sm:mt-[62px] overflow-hidden pb-5">
-          <h1 className="md:landingHeaderTxt md:mb-6 md:text-[40px] text-[22px] leading-[23px] text-center mb-3 font-semibold mx-2">
-            Recommended Attractions{" "}
+          <h1 className="md:landingHeaderTxt md:mb-6 md:text-[25px] text-[15px]  text-center mb-3 font-semibold mx-2">
+          Get All UAE Attraction Tickets in one stop <br /> – Burj Khalifa, Ferrari world tickets, and many more.
           </h1>
           <div className="flex justify-end md:mb-6 mb-2">
             <Link href={"/activities"}>
@@ -51,8 +51,8 @@ const LandingPage = () => {
         </section>
 
         <section className="pt-11 container mx-auto mt-0 sm:mt-[62px] overflow-hidden pb-5">
-          <h1 className="md:landingHeaderTxt md:mb-6 md:text-[40px] text-[22px] leading-[23px] text-center mb-3 font-semibold mx-2">
-            Recommended Transports{" "}
+          <h1 className="md:landingHeaderTxt md:mb-6 md:text-[25px] text-[15px]  text-center mb-3 font-semibold mx-2">
+          Expertise Chauffeur Services Throughout UAE <br /> - Hire your Car with Chauffeur Now
           </h1>
           <div className="flex justify-end md:mb-6 mb-2">
             <Link href={"/transports"}>
